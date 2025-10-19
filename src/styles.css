@@ -1,0 +1,206 @@
+/* General App Styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #fff2e6, #f0eafc);
+    color: #333;
+}
+
+.app {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: #6b4f4f;
+}
+
+.theme-toggle {
+    padding: 6px 12px;
+    border: none;
+    background-color: #ffd9b3;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.controls button, .controls select {
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffe5d4;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.controls button:hover, .controls select:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.15);
+}
+
+/* Grid Styling */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(8, 50px);
+    grid-template-rows: repeat(8, 50px);
+    gap: 4px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+/* Cell States */
+.original {
+    background-color: #f9f0e6;
+    font-weight: bold;
+    color: #6b4f4f;
+}
+
+.editable {
+    background-color: #fff7f0;
+}
+
+.correct {
+    background-color: #d0f0c0;
+}
+
+.wrong {
+    background-color: #ffcccc;
+}
+
+.hinted {
+    background-color: #fff8b3;
+}
+
+.highlight {
+    box-shadow: inset 0 0 0 2px #ffb347;
+}
+
+/* Dark Mode */
+.app.dark {
+    background: linear-gradient(120deg, #2c2c2c, #4b4b4b);
+    color: #eee;
+}
+
+.app.dark .controls button, 
+.app.dark .controls select, 
+.app.dark .theme-toggle {
+    background-color: #5c4b3c;
+    color: #fff;
+}
+
+.app.dark .grid {
+    gap: 3px;
+}
+
+.app.dark .cell {
+    border-color: #888;
+}
+
+.app.dark .original {
+    background-color: #5c4b3c;
+    color: #ffebc0;
+}
+
+.app.dark .editable {
+    background-color: #3c3c3c;
+}
+
+.app.dark .correct {
+    background-color: #4caf50a0;
+}
+
+.app.dark .wrong {
+    background-color: #e57373a0;
+}
+
+.app.dark .hinted {
+    background-color: #ffeb3ba0;
+}
+
+.app.dark .highlight {
+    box-shadow: inset 0 0 0 2px #ff9800;
+}
+
+/* Number Pad */
+.number-pad {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.number-pad button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: none;
+    background-color: #ffd9b3;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.1);
+    transition: all 0.2s ease;
+}
+
+.number-pad button:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 5px 12px rgba(0,0,0,0.15);
+}
+
+/* Responsive */
+@media(max-width:600px){
+    .grid {
+        grid-template-columns: repeat(8, 40px);
+        grid-template-rows: repeat(8, 40px);
+        gap: 3px;
+    }
+
+    .cell {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .number-pad button {
+        width: 35px;
+        height: 35px;
+    }
+}
